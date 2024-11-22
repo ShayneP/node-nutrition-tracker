@@ -1,0 +1,32 @@
+{
+  "name": "multimodal-agent-node",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint -f unix \"**/*.ts\""
+  },
+  "packageManager": "pnpm@9.2.0",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.15.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^22.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prisma": "^5.22.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@livekit/agents": "^0.4.5",
+    "@livekit/agents-plugin-openai": "^0.6.0",
+    "@prisma/client": "^5.22.0",
+    "dotenv": "^16.4.5",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.23.8"
+  }
+}

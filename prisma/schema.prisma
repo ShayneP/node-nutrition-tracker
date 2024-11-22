@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../food_tracker.db"
+}
+
+model FoodConsumption {
+  id                  Int      @id @default(autoincrement())
+  participantIdentity String
+  foodName            String
+  calories            Int?
+  protein             Float?
+  carbs               Float?
+  fats                Float?
+  consumedAt          DateTime @default(now())
+} 
