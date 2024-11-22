@@ -15,6 +15,7 @@ This is a slightly modified version of the [Node Multimodal Agent](https://githu
 - Record calories, protein, carbohydrates, and fats
 - Get daily nutrition totals
 - Persistent storage of food consumption data using SQLite
+- Per-user data tracking based on LiveKit identity
 
 ## Dev Setup
 
@@ -77,6 +78,16 @@ Example interactions:
 - "I had a chicken breast with 200 calories and 30 grams of protein"
 - "How much protein have I eaten today?"
 - "How many calories have I eaten today?"
+
+### User Identity and Data Persistence
+
+Nutrition data is stored and retrieved based on the user's LiveKit identity. To maintain persistent records:
+
+1. Use a consistent identity when connecting to LiveKit
+2. Ideally, use a verified token
+3. Different identities will track separate nutrition histories
+
+This allows multiple users to maintain their own food tracking history in the same instance of the application.
 
 ## Technologies Used
 
