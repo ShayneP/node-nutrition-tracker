@@ -92,7 +92,7 @@ This allows multiple users to maintain their own food tracking history in the sa
 ## Technologies Used
 
 - LiveKit Agents Framework
-- OpenAI GPT-4 with voice capabilities
+- OpenAI Realtime API
 - Prisma ORM
 - SQLite database
 - TypeScript/Node.js
