@@ -30,7 +30,8 @@ export default defineAgent({
     console.log(`starting assistant example agent for ${participant.identity}`);
 
     const model = new openai.realtime.RealtimeModel({
-      instructions: `You are a helpful assistant that helps track food consumption. You can record foods eaten and report daily totals for calories and macronutrients (protein, carbs, and fats). You always respond with voice. Never respond with text.`
+      instructions: `You are a helpful assistant who helps track food consumption.`,
+      voice: "sage"
     });
 
     const fncCtx: llm.FunctionContext = {
@@ -58,7 +59,6 @@ export default defineAgent({
               },
             });
             
-            // Build response string with available nutritional info
             const nutritionInfo = [
               calories && `${calories} calories`,
               protein && `${protein}g protein`,
@@ -122,24 +122,11 @@ export default defineAgent({
 
     session.conversation.item.create(llm.ChatMessage.create({
       role: llm.ChatRole.ASSISTANT,
-      text: 'Please greet the user via voice, and ask if they have anything to track.',
+      text: 'How can I help you today?'
     }));
 
     session.response.create();
-    
-    // Add event listeners to log the response
-    session.on('response_created', (response) => {
-      console.log('Response created:', response);
-    });
-    
-    session.on('response_text_delta', (event) => {
-      console.log('Response text delta:', event);
-    });
-    
-    session.on('response_done', (response) => {
-      console.log('Response completed:', response);
-    });
-  },
+  }
 });
 
 cli.runApp(new WorkerOptions({ agent: fileURLToPath(import.meta.url) }));
